@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Black.ttf');
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-image: linear-gradient(to bottom, #003366, #336699);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header svg circle {
+    animation-name: zoom-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+@keyframes zoom-in-out {
+    0% {
+        r: 10;
+    }
+    50% {
+        r: 20;
+    }
+    100% {
+        r: 10;
+    }
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav li:first-child {
+    margin-left: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #333333;font-size: 110%;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+
+aside {
+    width: 30%;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-left: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+article {
+    width: 40%;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 0 20px 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+article h2 {
+    margin-top: 0;
+}
+
+aside {
+    width: 30%;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+aside h3 {
+    margin-top: 0;
+}
+
+aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer {
+    background-image: linear-gradient(to bottom, #336699, #003366);
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    aside {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
