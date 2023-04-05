@@ -2,128 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Нові можливості HTML5 та CSS3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Bootstrap Design</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-Lvv0mDyKj+VlGWJr+cc0lI/y0Zc+7CvJmF0f7V+OylnfI7NzzRt/mcwqu8gjBx+X9Ig5h5e5Oq3hvhSP06+hEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-    <!-- підключення jQuery з CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- підключення jQuery UI з CDN -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-
 </head>
 <body>
-<header>
-    <div class="logo">
-        <svg width="50" height="50" viewBox="0 0 50 50">
-            <circle cx="25" cy="25" r="20" fill="#fff" stroke="#336699" stroke-width="5"/>
-        </svg>
-        <h1 id="logo-text">Мій сайт</h1>
-        <script>
-            $(document).ready(function () {
-                $('#logo-text').css('color', 'black');
-            });
-        </script>
-    </div>
-    <div class="navigation">
-        <nav>
-            <ul>
-                <li><a href="#">Головна</a></li>
-                <li><a href="#">Про мене</a></li>
-                <li><a href="#">Контакти</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<section>
-    <article>
-        <h2>Стаття 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elementum nisi in mauris sodales, in mollis
-            nisl commodo. Sed non mauris non odio dignissim aliquam. Fusce a ex velit. </p>
-    </article>
-    <article>
-        <h2>Стаття 2</h2>
-        <p>Donec a nunc id nunc pharetra blandit vel sit amet metus. Etiam viverra justo eget nulla aliquam, sit amet
-            laoreet arcu ultrices. Nunc hendrerit blandit est, a pulvinar elit tincidunt a.</p>
-    </article>
-
-</section>
-<div id="slider"></div>
-<p>Current value: <span id="slider-value">50</span></p>
-<script>
-    $(document).ready(function () {
-        $("#slider").slider({
-            min: 0,
-            max: 100,
-            value: 50,
-            slide: function (event, ui) {
-                $("#slider-value").text(ui.value);
-            }
-        });
-    });
-</script>
-
-<div class="news" align="center">
-    <aside>
-        <button id="menu-button">Натисни на мене для перегляду новин</button>
-        <ul id="menu">
-            <li><a href="#">Новина 1</a></li>
-            <li><a href="#">Новина 2</a></li>
-            <li><a href="#">Новина 3</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">My Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
         </ul>
-    </aside>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sidebar</h5>
+                    <p class="card-text">This is the sidebar content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-8">
+            <h1>Main Content</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget sapien dolor. Etiam blandit diam ut augue vestib
+                ibulum dapibus. Suspendisse ac libero quis odio hendrerit mattis vel ac nulla. Ut imperdiet tellus ut enim aliquet, at elementum orci vestibulum. </p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <footer>
+                <p>&copy; 2023 My Website</p>
+            </footer>
+        </div>
+    </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $("#menu").hide();
-        $("#menu-button").click(function () {
-            $("#menu").toggle();
-        });
-    });
-</script>
-
-<div id="gallery" align="center">
-    <a href="./res/237-200x300.jpg" data-fancybox="gallery">
-        <img src="./res/237-200x300.jpg" alt="Image 1">
-    </a>
-    <a href="./res/1025-200x300.jpg" data-fancybox="gallery">
-        <img src="./res/1025-200x300.jpg" alt="Image 2">
-    </a>
-    <a href="./res/1062-200x300.jpg" data-fancybox="gallery">
-        <img src="./res/1062-200x300.jpg" alt="Image 3">
-    </a>
-</div>
-<script>
-    $(document).ready(function () {
-        $("#gallery a").fancybox({
-            buttons: [
-                "zoom",
-                "share",
-                "slideShow",
-                "fullScreen",
-                "download",
-                "thumbs",
-                "close"
-            ],
-            animationEffect: "zoom-in-out",
-            transitionEffect: "slide",
-            loop: true
-        });
-    });
-</script>
-
-<footer>
-    <p>&copy; 2023 Мій сайт</p>
-</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
