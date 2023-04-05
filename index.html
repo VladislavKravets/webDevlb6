@@ -7,6 +7,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- підключення jQuery з CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- підключення jQuery UI з CDN -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
 </head>
 <body>
 <header>
@@ -14,7 +28,12 @@
         <svg width="50" height="50" viewBox="0 0 50 50">
             <circle cx="25" cy="25" r="20" fill="#fff" stroke="#336699" stroke-width="5"/>
         </svg>
-        <a><h1>Мій сайт</h1></a>
+        <h1 id="logo-text">Мій сайт</h1>
+        <script>
+            $(document).ready(function () {
+                $('#logo-text').css('color', 'black');
+            });
+        </script>
     </div>
     <div class="navigation">
         <nav>
@@ -37,15 +56,72 @@
         <p>Donec a nunc id nunc pharetra blandit vel sit amet metus. Etiam viverra justo eget nulla aliquam, sit amet
             laoreet arcu ultrices. Nunc hendrerit blandit est, a pulvinar elit tincidunt a.</p>
     </article>
+
 </section>
-<aside>
-    <h3>Новини</h3>
-    <ul>
-        <li><a href="#">Новина 1</a></li>
-        <li><a href="#">Новина 2</a></li>
-        <li><a href="#">Новина 3</a></li>
-    </ul>
-</aside>
+<div id="slider"></div>
+<p>Current value: <span id="slider-value">50</span></p>
+<script>
+    $(document).ready(function () {
+        $("#slider").slider({
+            min: 0,
+            max: 100,
+            value: 50,
+            slide: function (event, ui) {
+                $("#slider-value").text(ui.value);
+            }
+        });
+    });
+</script>
+
+<div class="news" align="center">
+    <aside>
+        <button id="menu-button">Натисни на мене для перегляду новин</button>
+        <ul id="menu">
+            <li><a href="#">Новина 1</a></li>
+            <li><a href="#">Новина 2</a></li>
+            <li><a href="#">Новина 3</a></li>
+        </ul>
+    </aside>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#menu").hide();
+        $("#menu-button").click(function () {
+            $("#menu").toggle();
+        });
+    });
+</script>
+
+<div id="gallery" align="center">
+    <a href="./res/237-200x300.jpg" data-fancybox="gallery">
+        <img src="./res/237-200x300.jpg" alt="Image 1">
+    </a>
+    <a href="./res/1025-200x300.jpg" data-fancybox="gallery">
+        <img src="./res/1025-200x300.jpg" alt="Image 2">
+    </a>
+    <a href="./res/1062-200x300.jpg" data-fancybox="gallery">
+        <img src="./res/1062-200x300.jpg" alt="Image 3">
+    </a>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#gallery a").fancybox({
+            buttons: [
+                "zoom",
+                "share",
+                "slideShow",
+                "fullScreen",
+                "download",
+                "thumbs",
+                "close"
+            ],
+            animationEffect: "zoom-in-out",
+            transitionEffect: "slide",
+            loop: true
+        });
+    });
+</script>
+
 <footer>
     <p>&copy; 2023 Мій сайт</p>
 </footer>
